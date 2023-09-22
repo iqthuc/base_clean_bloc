@@ -13,6 +13,11 @@ class NotificationConfig {
   static const notificationIconPath = 'ic_notification';
 }
 
+class SQLiteConfig {
+  static const String dbName = 'base_clean_bloc.db';
+  static const int dbVersion = 1;
+}
+
 class ImageUtils {
   static const imagePath = 'assets/images/';
   static const backgr2 = '${imagePath}backgr2.jpeg';

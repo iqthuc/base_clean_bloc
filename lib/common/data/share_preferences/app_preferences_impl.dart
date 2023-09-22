@@ -1,26 +1,11 @@
+import 'package:base_clean_bloc/common/index.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class LocalStorage {
-  Future<T?> get<T>(String key);
-
-  Future<bool> validateKey(String key);
-
-  Future<bool> remove(String key);
-
-  Future<bool> clearSession();
-
-  Future<void> reload();
-
-  Future<dynamic> save(String key, dynamic value);
-}
-
-@Injectable(as: LocalStorage)
-class LocalStorageImpl extends LocalStorage {
+@Injectable(as: AppPreferences)
+class AppPreferencesImpl extends AppPreferences {
   Future<dynamic> _doWork(Function(SharedPreferences) work) {
-    return SharedPreferences.getInstance()
-        .then(work)
-        .catchError((e) => throw Exception(e));
+    return SharedPreferences.getInstance().then(work).catchError((e) => throw Exception(e));
   }
 
   @override
