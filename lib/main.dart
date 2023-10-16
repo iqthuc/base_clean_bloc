@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:base_clean_bloc/common/app_theme/index.dart';
 import 'package:base_clean_bloc/common/constants.dart';
 import 'package:base_clean_bloc/common/notification/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
@@ -75,9 +76,9 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          theme: AppTheme.light,
+          darkTheme: AppTheme.dark,
+          themeMode: AppTheme().getThemeMode,
           routerConfig: _appRoute.config(),
         );
       },
