@@ -1,3 +1,5 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
+
 abstract class AppPreferences {
   Future<T?> get<T>(String key);
 
@@ -10,4 +12,7 @@ abstract class AppPreferences {
   Future<void> reload();
 
   Future<dynamic> save(String key, dynamic value);
+
+  Future<bool> saveThemeModeName(AdaptiveThemeMode themeMode);
+  String getThemeModeName();
 }

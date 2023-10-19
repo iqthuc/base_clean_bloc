@@ -1,9 +1,13 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:base_clean_bloc/common/index.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @Injectable(as: AppPreferences)
 class AppPreferencesImpl extends AppPreferences {
+  final SharedPreferences sharedPreferences;
+  AppPreferencesImpl({required this.sharedPreferences});
+  // set base functions
   Future<dynamic> _doWork(Function(SharedPreferences) work) {
     return SharedPreferences.getInstance().then(work).catchError((e) => throw Exception(e));
   }
@@ -66,4 +70,18 @@ class AppPreferencesImpl extends AppPreferences {
       }
     }).catchError((e) => throw Exception(e));
   }
+
+  // main functions
+  @override
+  String getThemeModeName() {
+    return (sharedPreferences.getString(themeModeKey) ?? AdaptiveThemeMode.light.name);
+  }
+
+  @override
+  Future<bool> saveThemeModeName(AdaptiveThemeMode themeMode) async {
+    return await save(themeModeKey, themeMode.name);
+  }
+
+  // keys
+  static const String themeModeKey = "theme_mode";
 }
