@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:base_clean_bloc/base/base_widget.dart';
 import 'package:base_clean_bloc/common/index.dart';
-import 'package:base_clean_bloc/common/notification/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
 import 'package:base_clean_bloc/features/example/presentation/bloc/example_bloc.dart';
 import 'package:flutter/material.dart';

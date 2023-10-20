@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:base_clean_bloc/base/base_widget.dart';
+import 'package:base_clean_bloc/features/example/data/model/player/player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../common/index.dart';
-import '../../data/model/index.dart';
 import '../../domain/entity/player/player_entity.dart';
 import '../bloc/example_bloc.dart';
 

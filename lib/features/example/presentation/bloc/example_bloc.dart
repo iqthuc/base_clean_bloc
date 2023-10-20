@@ -1,5 +1,6 @@
 import 'package:base_clean_bloc/base/bloc/index.dart';
 import 'package:base_clean_bloc/common/index.dart';
+import 'package:base_clean_bloc/features/example/data/model/player/player.dart';
 import 'package:base_clean_bloc/features/example/domain/use_case/use_case.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:dartz/dartz.dart';
@@ -9,7 +10,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../base/network/errors/error.dart';
-import '../../data/model/index.dart';
 import '../../domain/entity/player/player_entity.dart';
 
 part 'example_bloc.freezed.dart';
