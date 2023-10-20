@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFieldSearch extends StatefulWidget {
   const CustomTextFieldSearch({
-    Key? key,
+    super.key,
     this.focusNode,
     this.searchTextController,
     this.onSearch,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final FocusNode? focusNode;
   final TextEditingController? searchTextController;
@@ -27,8 +27,7 @@ class _CustomTextFieldSearchState extends State<CustomTextFieldSearch> {
   void initState() {
     super.initState();
     focusNode = widget.focusNode ?? FocusNode();
-    _searchTextController =
-        widget.searchTextController ?? TextEditingController();
+    _searchTextController = widget.searchTextController ?? TextEditingController();
     _searchTextController.addListener(() {
       if (!mounted) return;
       setState(() {});

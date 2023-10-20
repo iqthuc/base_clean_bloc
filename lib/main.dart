@@ -58,7 +58,7 @@ Future<void> main() async {
 //todo: base bloc, base widget, etc
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  MyApp({super.key});
 
   final _appRoute = getIt<AppRouter>();
 

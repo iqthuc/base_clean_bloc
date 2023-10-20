@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:base_clean_bloc/base/base_widget.dart';
 import 'package:base_clean_bloc/common/index.dart';
-import 'package:base_clean_bloc/common/notification/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
 import 'package:base_clean_bloc/features/example/presentation/bloc/example_bloc.dart';
+import 'package:base_clean_bloc/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -33,8 +33,9 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
         child: Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            decoration:
-                const BoxDecoration(image: DecorationImage(image: AssetImage(ImageUtils.backgr2), fit: BoxFit.cover)),
+            decoration: BoxDecoration(
+              image: DecorationImage(image: Assets.images.backgr2.provider(), fit: BoxFit.cover),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,7 +43,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                     height: 30,
                     margin: const EdgeInsets.only(bottom: 50, top: 100),
                     alignment: Alignment.center,
-                    child: const Image(image: AssetImage(ImageUtils.backgr2))),
+                    child: Assets.images.backgr2.image()),
                 const Text(
                   'Email',
                 ),
@@ -214,7 +215,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.blue.shade900)),
-                      child: const Image(image: AssetImage(ImageUtils.facebookIcon)),
+                      child: Assets.images.facebookIcon.image(),
                     ),
                     const SizedBox(
                       width: 10,
@@ -227,7 +228,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.red)),
-                      child: const Image(image: AssetImage(ImageUtils.googleIcon)),
+                      child: Assets.images.googleIcon.image(),
                     )
                   ],
                 )

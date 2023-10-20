@@ -5,9 +5,7 @@ class CustomCheckBoxWidget extends StatelessWidget {
   final bool? iconRadio;
   final Function() onChange;
 
-  const CustomCheckBoxWidget(
-      {Key? key, this.iconRadio, required this.value, required this.onChange})
-      : super(key: key);
+  const CustomCheckBoxWidget({super.key, this.iconRadio, required this.value, required this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,7 @@ class CustomCheckBoxWidget extends StatelessWidget {
         padding: const EdgeInsets.all(2),
         child: value
             ? Icon(
-                (iconRadio ?? false)
-                    ? Icons.radio_button_checked_sharp
-                    : Icons.check_circle,
+                (iconRadio ?? false) ? Icons.radio_button_checked_sharp : Icons.check_circle,
                 size: 24,
                 // color: AppColors.secondary1,
               )

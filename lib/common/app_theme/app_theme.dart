@@ -1,7 +1,4 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:base_clean_bloc/common/app_theme/colors/base_colors.dart';
-import 'package:base_clean_bloc/common/app_theme/colors/dark_colors.dart';
-import 'package:base_clean_bloc/common/app_theme/colors/light_colors.dart';
 import 'package:base_clean_bloc/common/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
 import 'package:flutter/material.dart';
