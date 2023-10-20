@@ -13,6 +13,6 @@ class AppTextStyle {
         letterSpacing: 0.25,
       ));
 
-  TextStyle get myTextSTyle => _appTextTheme.bodyLarge!;
+  TextStyle get myTextStyle => _appTextTheme.bodyLarge!;
   TextStyle get myTextSTyle2 => _appTextTheme.labelLarge!;
 }

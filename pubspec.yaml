@@ -47,6 +47,7 @@ dependencies:
   path_provider: ^2.1.1
   path: ^1.8.3
   cryptography: ^2.7.0
+  adaptive_theme: ^3.4.1
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:base_clean_bloc/common/app_theme/index.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:base_clean_bloc/common/constants.dart';
 import 'package:base_clean_bloc/common/notification/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
@@ -72,15 +72,21 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          theme: AppTheme.light,
-          darkTheme: AppTheme.dark,
-          themeMode: AppTheme().getThemeMode,
-          routerConfig: _appRoute.config(),
-        );
+        return AdaptiveTheme(
+            light: ThemeData.light(),
+            dark: ThemeData.dark(),
+            initial: AdaptiveThemeMode.light,
+            builder: (theme, darkTheme) {
+              return MaterialApp.router(
+                debugShowCheckedModeBanner: false,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: context.locale,
+                theme: theme,
+                darkTheme: darkTheme,
+                routerConfig: _appRoute.config(),
+              );
+            });
       },
     );
   }
