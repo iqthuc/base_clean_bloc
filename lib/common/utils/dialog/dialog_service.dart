@@ -76,7 +76,6 @@ class _DialogWidget extends StatefulWidget {
   final Function(bool value)? valueCheckbox;
 
   const _DialogWidget({
-    Key? key,
     this.leftButtonText,
     this.rightButtonText,
     this.onPressedLeftButton,
@@ -94,7 +93,7 @@ class _DialogWidget extends StatefulWidget {
     this.leftButtonTextColor,
     this.rightButtonTextColor,
     this.valueCheckbox,
-  }) : super(key: key);
+  });
 
   @override
   _DialogWidgetState createState() => _DialogWidgetState();

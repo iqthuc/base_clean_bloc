@@ -10,7 +10,7 @@ import '../bloc/example_bloc.dart';
 
 @RoutePage()
 class ExamplePage extends StatefulWidget {
-  const ExamplePage({Key? key}) : super(key: key);
+  const ExamplePage({super.key});
 
   @override
   State<ExamplePage> createState() => _ExamplePageState();
@@ -52,7 +52,7 @@ class _ExamplePageState extends BaseState<ExamplePage, ExampleEvent, ExampleStat
 }
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({Key? key}) : super(key: key);
+  const HeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class HeaderWidget extends StatelessWidget {
 
 class PlayerItem extends StatelessWidget {
   final PlayerEntity data;
-  const PlayerItem({Key? key, required this.data}) : super(key: key);
+  const PlayerItem({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

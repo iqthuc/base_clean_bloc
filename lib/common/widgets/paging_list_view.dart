@@ -16,7 +16,7 @@ class CustomSliverListView<T> extends StatelessWidget {
   final double? itemExtent;
   final Color? loadingBackgroundColor;
   const CustomSliverListView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     this.emptyWidget,
@@ -25,7 +25,7 @@ class CustomSliverListView<T> extends StatelessWidget {
     this.itemExtent,
     this.loadingBackgroundColor,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +42,7 @@ class CustomSliverListView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS
-                    ? const CupertinoActivityIndicator()
-                    : const CircularProgressIndicator(),
+                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -72,7 +70,7 @@ class CustomListView<T> extends StatelessWidget {
   final ScrollController? scrollController;
   final EdgeInsets? padding;
   const CustomListView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     this.emptyWidget = const SizedBox.shrink(),
@@ -82,7 +80,7 @@ class CustomListView<T> extends StatelessWidget {
     this.scrollController,
     this.padding,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +126,7 @@ class CustomSliverListViewSeparated<T> extends StatelessWidget {
   final double? itemExtent;
   final Color? loadingBackgroundColor;
   const CustomSliverListViewSeparated({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     this.emptyWidget,
@@ -138,7 +136,7 @@ class CustomSliverListViewSeparated<T> extends StatelessWidget {
     this.loadingBackgroundColor,
     required this.separatorBuilder,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -156,9 +154,7 @@ class CustomSliverListViewSeparated<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS
-                    ? const CupertinoActivityIndicator()
-                    : const CircularProgressIndicator(),
+                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -188,7 +184,7 @@ class CustomListViewSeparated<T> extends StatelessWidget {
   final EdgeInsets? padding;
 
   const CustomListViewSeparated({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     required this.separatorBuilder,
@@ -199,7 +195,7 @@ class CustomListViewSeparated<T> extends StatelessWidget {
     this.scrollController,
     this.padding,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -246,7 +242,7 @@ class CustomSliverGridView<T> extends StatelessWidget {
   final Color? loadingBackgroundColor;
   final SliverGridDelegate delegate;
   const CustomSliverGridView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     required this.delegate,
@@ -256,7 +252,7 @@ class CustomSliverGridView<T> extends StatelessWidget {
     this.itemExtent,
     this.loadingBackgroundColor,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -272,9 +268,7 @@ class CustomSliverGridView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS
-                    ? const CupertinoActivityIndicator()
-                    : const CircularProgressIndicator(),
+                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -303,7 +297,7 @@ class CustomGridView<T> extends StatelessWidget {
   final Color? loadingBackgroundColor;
   final SliverGridDelegate delegate;
   const CustomGridView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.builder,
     required this.delegate,
@@ -313,7 +307,7 @@ class CustomGridView<T> extends StatelessWidget {
     this.itemExtent,
     this.loadingBackgroundColor,
     this.firstPageProgressIndicator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -328,9 +322,7 @@ class CustomGridView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS
-                    ? const CupertinoActivityIndicator()
-                    : const CircularProgressIndicator(),
+                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(

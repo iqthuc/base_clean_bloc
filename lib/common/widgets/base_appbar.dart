@@ -24,7 +24,7 @@ class BaseAppBar extends StatelessWidget {
   final dynamic result;
 
   const BaseAppBar({
-    Key? key,
+    super.key,
     this.backgroundColor,
     this.titleSpacing,
     this.title,
@@ -43,7 +43,7 @@ class BaseAppBar extends StatelessWidget {
     this.onPressedLeading,
     this.result,
     this.systemUiOverlayStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

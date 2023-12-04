@@ -15,7 +15,7 @@ class CustomTextButton extends StatelessWidget {
   final Color? textColor;
 
   const CustomTextButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.textColor,
     this.textStyle,
@@ -28,7 +28,7 @@ class CustomTextButton extends StatelessWidget {
     this.borderRadius = 2,
     required this.title,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

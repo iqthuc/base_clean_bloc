@@ -33,13 +33,13 @@ class SelectionBottomSheetWidget extends StatefulWidget {
   final bool hasSelectAll;
   final bool hasRefreshButton;
   const SelectionBottomSheetWidget({
-    Key? key,
+    super.key,
     required this.data,
     this.selectedIndexes = const [],
     this.isRadio = true,
     this.hasSelectAll = false,
     this.hasRefreshButton = false,
-  }) : super(key: key);
+  });
 
   @override
   State<SelectionBottomSheetWidget> createState() => _SelectionBottomSheetWidgetState();

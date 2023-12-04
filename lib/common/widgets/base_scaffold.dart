@@ -21,7 +21,7 @@ class BaseScaffold extends StatelessWidget {
   final Function(bool)? onScroll;
 
   const BaseScaffold({
-    Key? key,
+    super.key,
     this.appBar,
     this.marginTop,
     this.addKey,
@@ -38,7 +38,7 @@ class BaseScaffold extends StatelessWidget {
     this.showFloat,
     this.onScroll,
     this.hasTabBar = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +51,13 @@ class BaseScaffold extends StatelessWidget {
           ? null
           : PreferredSize(
               preferredSize: Size.fromHeight(
-                AppBar().preferredSize.height +
-                    (hasTabBar ? kToolbarHeight.h : 0),
+                AppBar().preferredSize.height + (hasTabBar ? kToolbarHeight.h : 0),
               ),
               child: appBar!,
             ),
       body: Stack(
         children: [
-          if ((hasBackgroundImage ?? false) &&
-              (backgroundImage ?? "").isNotEmpty)
+          if ((hasBackgroundImage ?? false) && (backgroundImage ?? "").isNotEmpty)
             Container(
               height: ScreenUtilsConfig.designHeight,
               width: ScreenUtilsConfig.designWidth,
@@ -77,9 +75,7 @@ class BaseScaffold extends StatelessWidget {
             bottom: isBottom ?? true,
             child: Padding(
               padding: EdgeInsets.only(
-                top: appBar == null && !(isFull ?? false)
-                    ? MediaQuery.of(context).padding.top
-                    : 0,
+                top: appBar == null && !(isFull ?? false) ? MediaQuery.of(context).padding.top : 0,
               ),
               child: body ?? const SizedBox(),
             ),

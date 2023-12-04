@@ -3,11 +3,12 @@ import 'package:base_clean_bloc/base/base_widget.dart';
 import 'package:base_clean_bloc/common/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
 import 'package:base_clean_bloc/features/example/presentation/bloc/example_bloc.dart';
+import 'package:base_clean_bloc/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -37,6 +38,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Assets.images.backgr2.image(),
                 Container(
                     height: 30,
                     margin: const EdgeInsets.only(bottom: 50, top: 100),
