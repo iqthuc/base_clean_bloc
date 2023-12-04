@@ -77,10 +77,12 @@ class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget>
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        submit();
-        return Future<bool>.value(true);
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) {
+        if (didPop) {
+          return;
+        }
       },
       child: ClipRRect(
         borderRadius: BorderRadius.only(
