@@ -40,8 +40,13 @@ class $AssetsImagesGen {
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/images/googleIcon.png');
 
+  /// File path: assets/images/home_header_image.png
+  AssetGenImage get homeHeaderImage =>
+      const AssetGenImage('assets/images/home_header_image.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [backgr2, facebookIcon, googleIcon];
+  List<AssetGenImage> get values =>
+      [backgr2, facebookIcon, googleIcon, homeHeaderImage];
 }
 
 class $AssetsTranslationsGen {
