@@ -50,6 +50,7 @@ dependencies:
   path_provider: ^2.1.1
   shared_preferences: ^2.2.2
   sqflite: ^2.3.0
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -80,4 +81,5 @@ flutter:
   assets:
     - assets/env/
     - assets/images/
+    - assets/icons/
     - assets/translations/
