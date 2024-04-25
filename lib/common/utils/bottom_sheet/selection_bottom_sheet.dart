@@ -1,4 +1,4 @@
-import 'package:base_clean_bloc/common/widgets/textfields/search_textfield.dart';
+import 'package:base_clean_bloc/common/widgets/text_fields/search_text_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

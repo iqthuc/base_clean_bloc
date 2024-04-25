@@ -29,7 +29,7 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/backgr2.jpeg
-  AssetGenImage get backgr2 =>
+  AssetGenImage get background2 =>
       const AssetGenImage('assets/images/backgr2.jpeg');
 
   /// File path: assets/images/facebookIcon.png
@@ -41,7 +41,7 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/googleIcon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [backgr2, facebookIcon, googleIcon];
+  List<AssetGenImage> get values => [background2, facebookIcon, googleIcon];
 }
 
 class $AssetsTranslationsGen {

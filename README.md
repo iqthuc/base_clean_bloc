@@ -1,10 +1,6 @@
-
 # Base Project Flutter with Bloc Pattern
 
-
-
-
-## Packages 
+## Packages
 
 - [Bloc Pattern: flutter_bloc](https://pub.dev/packages/flutter_bloc)
 - [Navigation: auto_route](https://pub.dev/packages/auto_route)
@@ -14,48 +10,48 @@
 - [Flavors: production, dev, staging](https://docs.flutter.dev/deployment/flavors)
 - [Model generator: Freezed](https://pub.dev/packages/freezed)
 - [Dio client generator: retrofit](https://pub.dev/packages/retrofit)
--  ...
-
-
+- ...
 
 ## Installation
 
-Generate code command: 
+Generate code command:
 
 ```bash
 flutter packages pub run build_runner build --delete-conflicting-outputs
 #new version
 #dart run build_runner build -d
 ```
-    
+
 ## Project structure
+
 ```
- 
+
 │
 └───base // contains base (bloc, state, ...) & network config
-│    
+│
 └───common // contains app theme, config, extensions, common widgets ...
-│   
-└───di 
-│   
-└───features 
-│   
+│
+└───di
+│
+└───features
+│
 └───routes // navigation
-│   
+│
 └───main.dart
 ```
 
-Feature structure
----
+## Feature structure
+
 Use CLEAN architecture
 
 ![App Screenshot](https://i0.wp.com/resocoder.com/wp-content/uploads/2019/08/Clean-Architecture-Flutter-Diagram.png?ssl=1)
+
 ```
 │
 └───data
-│   └─── model 
+│   └─── model
 │   └─── remote
-│            └─── service 
+│            └─── service
 │            └─── source
 │   └─── repository (impl)
 └───domain
@@ -67,11 +63,10 @@ Use CLEAN architecture
 │   └─── widgets
 ```
 
-
-
-
 ## Must use BaseScaffold and BaseAppBar!!!
+
 eg:
+
 ```dart
 class Example extends StatelessWidget {
   const Example({Key? key}) : super(key: key);
@@ -88,8 +83,9 @@ class Example extends StatelessWidget {
 ```
 
 ## How to use pagination
+
 - in bloc
-**Init the paging controller**, add **BaseCommonMethodMixin** mixin to bloc.
+  **Init the paging controller**, add **BaseCommonMethodMixin** mixin to bloc.
 
 ```dart
 class xxxBloc extends BaseBloc<E, S> with BaseCommonMethodMixin{
@@ -106,13 +102,14 @@ class xxxBloc extends BaseBloc<E, S> with BaseCommonMethodMixin{
     final res = await _coreUseCase.getData(offset: offset, limit: 25);
 
     pagingControllerOnLoad(offset, pagingController, res);
-    
+
   }
 }
 ```
 
 - in view
-**addPageRequestListener in initState** then use CustomListViewSeparated or another which match the case. See in paging_list_view.dart
+  **addPageRequestListener in initState** then use CustomListViewSeparated or another which match the case. See in paging_list_view.dart
+
 ```dart
 class ExamplePage extends StatefulWidget {
   const ExamplePage({Key? key}) : super(key: key);
@@ -156,34 +153,45 @@ class _ExamplePageState
   }
 }
 ```
-## Dialog & bottomsheet
+
+## Dialog & bottom sheet
+
 - at common/utils/
+
 ## Common widgets (button, textfield)
+
 - at common/widgets/
 
-
-
 ## Flavor
+
 Using
+
 - [Flutter dotenv](https://pub.dev/packages/flutter_dotenv)
   Config env in
+
 ```
 │
 └───assets
 │   └─── evn
 ```
+
 In Android
------------ 
+
+---
+
 Add google_services.json to
+
 ```
 │
 └───android
 │   └─── app
-│            └─── dev 
+│            └─── dev
 │            └─── staging
 │            └─── production
 ```
+
 Change applicationId & App name in android/app/build.gradle
+
 ```
     flavorDimensions "app"
 
@@ -195,7 +203,7 @@ Change applicationId & App name in android/app/build.gradle
         }
         staging {
             dimension "app"
-            resValue "string","app_name","Base Bloc Flutter 3 Stagin"
+            resValue "string","app_name","Base Bloc Flutter 3 Staging"
             applicationId "com.example.base_clean_bloc.staging"
         }
         production {
@@ -209,58 +217,71 @@ Change applicationId & App name in android/app/build.gradle
 ```
     applicationId "com.example.base_clean_bloc"
 ```
-In IOS
-------
+
+## In IOS
+
 Add google google_services.plist to
+
 ```
 │
 └───Runner
 │   └─── config
-│            └─── dev 
+│            └─── dev
 │            └─── staging
 │            └─── production
 ```
+
 Change Product Bundle Identifier in Runner/Targets/Runner/Build Setting/Product Bundle Identifier
 Change App Display Name in Runner/Targets/Runner/Build Setting/User-Defined/APP_DISPLAY_NAME
 
 ## Push Notification
+
 Using
+
 - [Firebase Messing](https://pub.dev/packages/firebase_messaging)
 
 Initial Firebase Message
+
 ```dart
     Future<void> initialize({Function(String)? handleNotificationOnTap,})
 ```
 
 Listen onMessage
+
 ```dart
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-        
+
     });
 ```
+
 Listen onBackgroundMessage
+
 ```dart
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 ```
+
 Listen onMessage when App opened & handle onTap notification
+
 ```dart
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-          
+
     });
 ```
 
 ## Local Notification
+
 Using
+
 - [Flutter Local Notification](https://pub.dev/packages/flutter_local_notifications)
 
-
 Init local Notification
+
 ```dart
     Future<void> init()
 ```
 
-
 Show Notification
+
 ```dart
     Future<void> showNotification({
     required String title,
@@ -272,9 +293,9 @@ Show Notification
   }){}
 ```
 
-Hanlde onTap Notification
+Handle onTap Notification
+
 ```dart
     Future<dynamic> selectNotification(String? payload) async {
     }
 ```
-

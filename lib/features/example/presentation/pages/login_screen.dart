@@ -19,8 +19,8 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
   @override
   void initState() {
     super.initState();
-    final notiPlugin = getIt.get<LocalNotificationHelper>();
-    notiPlugin.showNotification(title: "title", body: "body");
+    final notificationPlugin = getIt.get<LocalNotificationHelper>();
+    notificationPlugin.showNotification(title: "title", body: "body");
   }
 
   @override
@@ -34,7 +34,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 30),
             decoration: BoxDecoration(
-              image: DecorationImage(image: Assets.images.backgr2.provider(), fit: BoxFit.cover),
+              image: DecorationImage(image: Assets.images.background2.provider(), fit: BoxFit.cover),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +43,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                     height: 30,
                     margin: const EdgeInsets.only(bottom: 50, top: 100),
                     alignment: Alignment.center,
-                    child: Assets.images.backgr2.image()),
+                    child: Assets.images.background2.image()),
                 const Text(
                   'Email',
                 ),
