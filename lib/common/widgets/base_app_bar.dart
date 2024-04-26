@@ -62,7 +62,7 @@ class BaseAppBar extends StatelessWidget {
                   if (onPressedLeading != null) {
                     onPressedLeading!();
                   } else {
-                    context.popRoute(result);
+                    context.maybePop(result);
                   }
                 },
                 child: const Icon(Icons.arrow_back_ios) //todo: default icon,

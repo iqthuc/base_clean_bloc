@@ -34,7 +34,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 30),
             decoration: BoxDecoration(
-              image: DecorationImage(image: Assets.images.background2.provider(), fit: BoxFit.cover),
+              image: DecorationImage(image: Assets.images.background.provider(), fit: BoxFit.cover),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +43,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                     height: 30,
                     margin: const EdgeInsets.only(bottom: 50, top: 100),
                     alignment: Alignment.center,
-                    child: Assets.images.background2.image()),
+                    child: Assets.images.background.image()),
                 const Text(
                   'Email',
                 ),
