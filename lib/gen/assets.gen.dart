@@ -13,16 +13,16 @@ class $AssetsEnvGen {
   const $AssetsEnvGen();
 
   /// File path: assets/env/.env_dev
-  String get envDev => 'assets/env/.env_dev';
+  String get aEnvDev => 'assets/env/.env_dev';
 
   /// File path: assets/env/.env_production
-  String get envProduction => 'assets/env/.env_production';
+  String get aEnvProduction => 'assets/env/.env_production';
 
   /// File path: assets/env/.env_staging
-  String get envStaging => 'assets/env/.env_staging';
+  String get aEnvStaging => 'assets/env/.env_staging';
 
   /// List of all assets
-  List<String> get values => [envDev, envProduction, envStaging];
+  List<String> get values => [aEnvDev, aEnvProduction, aEnvStaging];
 }
 
 class $AssetsImagesGen {
@@ -66,9 +66,16 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,

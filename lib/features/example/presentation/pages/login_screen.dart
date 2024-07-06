@@ -121,7 +121,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
                           side: const BorderSide(color: Colors.transparent),
                           checkColor: Colors.black,
                           activeColor: Colors.transparent,
-                          fillColor: MaterialStateProperty.all(Colors.white),
+                          fillColor: WidgetStateProperty.all(Colors.white),
                           value: true,
                           onChanged: (value) {
                             // controller.saveCheckStay(value!);
