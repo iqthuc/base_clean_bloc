@@ -42,10 +42,12 @@ class SelectionBottomSheetWidget extends StatefulWidget {
   });
 
   @override
-  State<SelectionBottomSheetWidget> createState() => _SelectionBottomSheetWidgetState();
+  State<SelectionBottomSheetWidget> createState() =>
+      _SelectionBottomSheetWidgetState();
 }
 
-class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget> {
+class _SelectionBottomSheetWidgetState
+    extends State<SelectionBottomSheetWidget> {
   final searchController = TextEditingController();
   final List<ItemSelection> items = [];
 
@@ -79,7 +81,11 @@ class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget>
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (bool didPop) {
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) {
+          return;
+        }
+        //TODO: để tạm, cần sửa lại sau
         submit();
       },
       child: ClipRRect(
@@ -185,7 +191,9 @@ class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget>
                   margin: EdgeInsets.only(left: 16.w, right: 16.w, top: 16.w),
                   child: ListView.separated(
                     physics: const BouncingScrollPhysics(),
-                    separatorBuilder: (c, i) => items[i].show ? const Divider() : const SizedBox.shrink(),
+                    separatorBuilder: (c, i) => items[i].show
+                        ? const Divider()
+                        : const SizedBox.shrink(),
                     itemBuilder: (c, i) => items[i].show
                         ? InkWell(
                             onTap: () {
@@ -194,7 +202,8 @@ class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget>
                                   //do nothing
                                 } else {
                                   setState(() {
-                                    items[i] = items[i].copyWith(selected: false);
+                                    items[i] =
+                                        items[i].copyWith(selected: false);
                                   });
                                 }
                               } else {
@@ -203,7 +212,8 @@ class _SelectionBottomSheetWidgetState extends State<SelectionBottomSheetWidget>
                                     submit(res: [i]);
                                   } else {
                                     //multi Selection
-                                    items[i] = items[i].copyWith(selected: true);
+                                    items[i] =
+                                        items[i].copyWith(selected: true);
                                   }
                                 });
                               }
