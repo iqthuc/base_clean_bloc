@@ -7,11 +7,11 @@ import '../../../../../base/network/models/base_data.dart';
 
 part 'example_service.g.dart';
 
-@RestApi()
 @injectable
+@RestApi()
 abstract class ExampleService {
   @factoryMethod
-  factory ExampleService(Dio dio, {String baseUrl}) = _ExampleService;
+  factory ExampleService(Dio dio) = _ExampleService;
 
   @GET("/players")
   Future<BaseListData<Player>> getData({

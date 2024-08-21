@@ -11,11 +11,13 @@ final GetIt getIt = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-void initSharePreferences() {
-  getIt.registerSingletonAsync<SharedPreferences>(() => SharedPreferences.getInstance());
+void initSharePreferences() async {
+  getIt.registerSingletonAsync<SharedPreferences>(() async {
+    return await SharedPreferences.getInstance();
+  });
 }
 
-void configureDependencies({String env = Environment.dev}) {
+void configureDependencies({String env = Environment.dev}) async {
   initSharePreferences();
   $initGetIt(getIt, environment: env);
 }

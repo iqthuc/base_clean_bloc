@@ -11,58 +11,58 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  auto_route: 9.2.0
-  cached_network_image: 3.4.0
-  connectivity_plus: 6.0.5
-  copy_with_extension: 5.0.4
-  cupertino_icons: 1.0.8
-  dartz: 0.10.1
-  dio: 5.6.0
-  easy_localization: 3.0.7
-  flutter_dotenv: 5.1.0
-  flutter_bloc: 8.1.6
-  flutter_gen: 5.6.0
-  flutter_local_notifications: 17.2.2
-  freezed_annotation: 2.4.4
-  get_it: 7.7.0
-  injectable: 2.4.4
-  json_annotation: 4.9.0
+  auto_route: ^9.2.0
+  cached_network_image: ^3.4.0
+  connectivity_plus: ^6.0.5
+  copy_with_extension: ^5.0.4
+  cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
+  dio: ^5.6.0
+  easy_localization: ^3.0.7
+  flutter_dotenv: ^5.1.0
+  flutter_bloc: ^8.1.6
+  flutter_gen: ^5.6.0
+  flutter_local_notifications: ^17.2.2
+  freezed_annotation: ^2.4.4
+  get_it: ^7.7.0
+  injectable: ^2.4.4
+  json_annotation: ^4.9.0
   logger: any
-  retrofit: 4.2.0
+  retrofit: ^4.2.0
 
   #Firebase
-  firebase_core: 3.3.0
-  firebase_messaging: 15.0.4
+  firebase_core: ^3.3.0
+  firebase_messaging: ^15.0.4
 
   #responsive
-  device_preview: 1.2.0
-  flutter_screenutil: 5.9.3
+  device_preview: ^1.2.0
+  flutter_screenutil: ^5.9.3
 
   #UI
-  adaptive_theme: 3.6.0
-  equatable: 2.0.5
-  infinite_scroll_pagination: 4.0.0
-  top_snackbar_flutter: 3.1.0
+  adaptive_theme: ^3.6.0
+  equatable: ^2.0.5
+  infinite_scroll_pagination: ^4.0.0
+  top_snackbar_flutter: ^3.1.0
 
   #database
-  cryptography: 2.7.0
-  path: 1.9.0
-  path_provider: 2.1.4
-  shared_preferences: 2.3.2
-  sqflite: 2.3.3+1
+  cryptography: ^2.7.0
+  path: ^1.9.0
+  path_provider: ^2.1.4
+  shared_preferences: ^2.3.2
+  sqflite: ^2.3.3+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  auto_route_generator: 9.0.0
-  build_runner: 2.4.12
-  copy_with_extension_gen: 5.0.4
-  flutter_gen_runner: 5.6.0
-  flutter_lints: 4.0.0
-  freezed: 2.5.7
-  injectable_generator: 2.6.2
-  json_serializable: 6.8.0
-  retrofit_generator: 8.2.0
+  auto_route_generator: ^9.0.0
+  build_runner: ^2.4.12
+  copy_with_extension_gen: ^5.0.4
+  flutter_gen_runner: ^5.6.0
+  flutter_lints: ^4.0.0
+  freezed: ^2.5.7
+  injectable_generator: ^2.6.2
+  json_serializable: ^6.8.0
+  retrofit_generator: ^8.2.0
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)

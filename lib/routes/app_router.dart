@@ -7,7 +7,6 @@ import 'package:injectable/injectable.dart';
 @singleton
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
-
  @override
  List<AutoRoute> get routes => [
    AutoRoute(
