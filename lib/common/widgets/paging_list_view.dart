@@ -42,7 +42,9 @@ class CustomSliverListView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
+                child: Platform.isIOS
+                    ? const CupertinoActivityIndicator()
+                    : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -154,7 +156,9 @@ class CustomSliverListViewSeparated<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
+                child: Platform.isIOS
+                    ? const CupertinoActivityIndicator()
+                    : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -268,7 +272,9 @@ class CustomSliverGridView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
+                child: Platform.isIOS
+                    ? const CupertinoActivityIndicator()
+                    : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(
@@ -322,7 +328,9 @@ class CustomGridView<T> extends StatelessWidget {
               color: loadingBackgroundColor ?? Colors.transparent,
               height: 200,
               child: Center(
-                child: Platform.isIOS ? const CupertinoActivityIndicator() : const CircularProgressIndicator(),
+                child: Platform.isIOS
+                    ? const CupertinoActivityIndicator()
+                    : const CircularProgressIndicator(),
               ),
             ),
         firstPageErrorIndicatorBuilder: (_) => Column(

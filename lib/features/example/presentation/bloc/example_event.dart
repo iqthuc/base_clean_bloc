@@ -1,7 +1,7 @@
 part of 'example_bloc.dart';
 
 @freezed
-abstract class ExampleEvent with _$ExampleEvent {
+sealed class ExampleEvent with _$ExampleEvent {
   const factory ExampleEvent.getData() = GetData;
   const factory ExampleEvent.showMessage() = ShowMessage;
   const factory ExampleEvent.getPlayers({

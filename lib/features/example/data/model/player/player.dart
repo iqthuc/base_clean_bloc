@@ -5,31 +5,33 @@ part 'player.freezed.dart';
 part 'player.g.dart';
 
 @freezed
-class Player extends PlayerEntity with _$Player {
-  const factory Player({
-    final int? id,
-    final String? firstName,
-    final String? heightFeet,
-    final String? heightInches,
-    final String? lastName,
-    final String? position,
-    final Team? team,
-    final String? weightPounds,
+abstract class Player extends PlayerEntity with _$Player {
+  Player._();
+  factory Player({
+    int? id,
+    String? firstName,
+    String? heightFeet,
+    String? heightInches,
+    String? lastName,
+    String? position,
+    Team? team,
+    String? weightPounds,
   }) = _Player;
 
   factory Player.fromJson(Map<String, dynamic> json) => _$PlayerFromJson(json);
 }
 
 @freezed
-class Team extends TeamEntity with _$Team {
-  const factory Team({
-    final int? id,
-    final String? abbreviation,
-    final String? city,
-    final String? conference,
-    final String? division,
-    final String? fullName,
-    final String? name,
+abstract class Team extends TeamEntity with _$Team {
+  Team._();
+  factory Team({
+    int? id,
+    String? abbreviation,
+    String? city,
+    String? conference,
+    String? division,
+    String? fullName,
+    String? name,
   }) = _Team;
 
   factory Team.fromJson(Map<String, dynamic> json) => _$TeamFromJson(json);

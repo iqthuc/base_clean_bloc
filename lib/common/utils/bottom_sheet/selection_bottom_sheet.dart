@@ -85,7 +85,6 @@ class _SelectionBottomSheetWidgetState
         if (didPop) {
           return;
         }
-        //TODO: để tạm, cần sửa lại sau
         submit();
       },
       child: ClipRRect(

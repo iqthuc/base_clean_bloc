@@ -4,7 +4,6 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:base_clean_bloc/common/constants.dart';
 import 'package:base_clean_bloc/common/notification/index.dart';
 import 'package:base_clean_bloc/di/di_setup.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -40,17 +39,12 @@ Future<void> main() async {
   await getIt<PushNotificationHelper>().initialize();
   await getIt<LocalNotificationHelper>().init();
   runApp(
-    DevicePreview(
-      enabled: false, // !kReleaseMode,
-      builder: (context) {
-        return EasyLocalization(
+    EasyLocalization(
           supportedLocales: const [LocalizationConstants.enUSLocale, LocalizationConstants.viLocale],
           path: LocalizationConstants.path,
           fallbackLocale: LocalizationConstants.enUSLocale,
           child: MyApp(),
-        );
-      },
-    ),
+        )
   );
 }
 

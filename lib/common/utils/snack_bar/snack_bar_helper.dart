@@ -22,19 +22,12 @@ class SnackBarHelper {
       case SnackBarType.success:
         icon = const Icon(Icons.check);
         color = Colors.green;
-        break;
       case SnackBarType.error:
         icon = const Icon(Icons.error_outline);
         color = Colors.red;
-        break;
       case SnackBarType.info:
         icon = const Icon(Icons.info_outline);
         color = Colors.blue;
-        break;
-      default:
-        icon = const Icon(Icons.check);
-        color = Colors.green;
-        break;
     }
 
     showTopSnackBar(

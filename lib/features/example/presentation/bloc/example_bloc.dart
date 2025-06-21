@@ -1,5 +1,4 @@
 import 'package:base_clean_bloc/base/bloc/index.dart';
-import 'package:base_clean_bloc/common/index.dart';
 import 'package:base_clean_bloc/features/example/data/model/player/player.dart';
 import 'package:base_clean_bloc/features/example/domain/use_case/use_case.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -18,23 +17,28 @@ part 'example_event.dart';
 part 'example_state.dart';
 
 @injectable
-class ExampleBloc extends BaseBloc<ExampleEvent, ExampleState> with BaseCommonMethodMixin {
+class ExampleBloc extends BaseBloc<ExampleEvent, ExampleState> {
   ExampleBloc(this._coreUseCase) : super(ExampleState.init()) {
     on<ExampleEvent>((ExampleEvent event, Emitter<ExampleState> emit) async {
-      await event.when(
-        getData: () => onGetData(emit),
-        showMessage: () => onShowMessage(emit),
-        getPlayers: (List<PlayerEntity> players, int offset) => onGetPlayers(emit, players, offset),
-      );
+      switch (event) {
+        case GetData():
+          await onGetData(emit);
+        case ShowMessage():
+          await onShowMessage(emit);
+        case GetPlayers(:final players, :final offset):
+          await onGetPlayers(emit, players, offset);
+      }
     });
   }
 
   final ExampleUseCase _coreUseCase;
-  final PagingController<int, Player> pagingController = PagingController(firstPageKey: 0);
+  final PagingController<int, Player> pagingController =
+      PagingController(firstPageKey: 0);
 
   Future onGetData(Emitter<ExampleState> emit) async {
     emit(state.copyWith(attribute: none()));
-    final Either<BaseError, List<PlayerEntity>> result = await _coreUseCase.getData(limit: 25, offset: 0);
+    final Either<BaseError, List<PlayerEntity>> result =
+        await _coreUseCase.getData(limit: 25, offset: 0);
     emit(
       result.fold(
         (l) => state.copyWith(status: BaseStateStatus.failed, message: "Error"),
@@ -47,10 +51,8 @@ class ExampleBloc extends BaseBloc<ExampleEvent, ExampleState> with BaseCommonMe
     emit(state.copyWith(message: "Error"));
   }
 
-  Future onGetPlayers(Emitter<ExampleState> emit, List<PlayerEntity> players, int offset) async {
-    final res = await _coreUseCase.getData(offset: offset, limit: 25);
-    pagingControllerOnLoad(offset, pagingController, res, onSuccess: () {
-      emit(state.copyWith(players: pagingController.itemList));
-    });
+  Future onGetPlayers(Emitter<ExampleState> emit, List<PlayerEntity> players,
+      int offset) async {
+    final _ = await _coreUseCase.getData(offset: offset, limit: 25);
   }
 }

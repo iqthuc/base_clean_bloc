@@ -16,7 +16,8 @@ class ExamplePage extends StatefulWidget {
   State<ExamplePage> createState() => _ExamplePageState();
 }
 
-class _ExamplePageState extends BaseState<ExamplePage, ExampleEvent, ExampleState, ExampleBloc> {
+class _ExamplePageState
+    extends BaseState<ExamplePage, ExampleEvent, ExampleState, ExampleBloc> {
   @override
   void initState() {
     super.initState();
@@ -56,9 +57,11 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final total = context.select((ExampleBloc bloc) => bloc.state.players.length);
+    final total =
+        context.select((ExampleBloc bloc) => bloc.state.players.length);
     return Container(
-      decoration: BoxDecoration(color: Colors.greenAccent, border: Border.all()),
+      decoration:
+          BoxDecoration(color: Colors.greenAccent, border: Border.all()),
       padding: const EdgeInsets.all(16),
       child: Text("Count: $total"),
     );
