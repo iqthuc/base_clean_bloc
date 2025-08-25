@@ -27,7 +27,7 @@ class _LoginScreenState extends BaseState<LoginScreen, ExampleEvent, ExampleStat
   Widget renderUI(BuildContext context) {
     return BaseScaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: context.themeColors.myGreenColors,
+      backgroundColor: context.appColors.background,
       body: Form(
         key: _key,
         child: Container(

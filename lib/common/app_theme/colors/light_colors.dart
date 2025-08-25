@@ -1,9 +1,9 @@
 import 'package:base_clean_bloc/common/app_theme/colors/base_colors.dart';
 import 'package:flutter/material.dart';
 
-class LightColor extends BaseColors {
+class LightColors implements BaseColors {
   @override
-  Color get myColors => Colors.white;
+  Color get background => Colors.grey;
   @override
-  Color get myGreenColors => Colors.purple;
+  Color get title => Colors.white;
 }
